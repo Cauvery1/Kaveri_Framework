@@ -11,17 +11,18 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
+import com.training.pom.RTTC_023_POM;
+import com.training.pom.DashboardForAdmin_POM;
 import com.training.pom.LoginPOM;
-import com.training.pom.RTTC_024_POM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class RTTC_024_Tests {
+public class AdminToFilterTaxFromSalesListOfReports_023_Tests {
 	private WebDriver driver;
 	private String baseUrladmin;
 	private static Properties properties;
 	private ScreenShot screenShot;
-	private RTTC_024_POM test_024_POM;
+	private DashboardForAdmin_POM dashboard_POM;
 	private LoginPOM loginPOM;
 	@BeforeClass
 	public static void setUpBeforeClass() throws IOException {
@@ -34,7 +35,7 @@ public class RTTC_024_Tests {
 	@Test(priority=0)
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
-		test_024_POM = new RTTC_024_POM(driver); 
+		dashboard_POM = new DashboardForAdmin_POM(driver); 
 		loginPOM = new LoginPOM(driver);
 		baseUrladmin = properties.getProperty("baseURLadmin");
 		screenShot = new ScreenShot(driver); 
@@ -60,21 +61,22 @@ public class RTTC_024_Tests {
 	}
 	
 	@Test(priority=2)
-	public void sortShippingFromSalesList() throws InterruptedException {
-		test_024_POM.reportsLink();
+	public void sortTaxFromSalesList() throws InterruptedException {
+		dashboard_POM.reportsLink();
 		screenShot.captureScreenShot("Reports Menu");
-		test_024_POM.salesLink();
+		dashboard_POM.salesLink();
 		screenShot.captureScreenShot("Sales Menu");
-		String Expected = "Shipping Report";
-		String Actual = test_024_POM.shippingLink();
+		String Expected = "Tax Report";
+		String Actual = dashboard_POM .taxLink();
 		assertEquals(Actual,Expected);
-		screenShot.captureScreenShot("Shipping  Sales report page for tax ");
-		test_024_POM.groupByField();
-		screenShot.captureScreenShot("Shipping  Selected Weeks");
-		test_024_POM.filterBtn();
-		screenShot.captureScreenShot("Shipping  Filtered Shipping");
+		screenShot.captureScreenShot("TAX Sales report page for tax ");
+		dashboard_POM.groupByField();
+		screenShot.captureScreenShot("TAX Selected Weeks");
+		dashboard_POM.filterBtn();
+		screenShot.captureScreenShot("TAX Filtered Tax");
 		
 		
 	}
+	
 
 }

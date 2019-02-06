@@ -2,32 +2,32 @@
 <testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="44165" started-at="2019-01-25T12:55:24Z" finished-at="2019-01-25T12:56:08Z">
+  <suite name="Default suite" duration-ms="46746" started-at="2019-02-06T04:04:28Z" finished-at="2019-02-06T04:05:15Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="44165" started-at="2019-01-25T12:55:24Z" finished-at="2019-01-25T12:56:08Z">
-      <class name="com.training.functional.tests.RTTC_021_Tests">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.functional.tests.RTTC_021_Tests@5c7fa833]" name="setUpBeforeClass" is-config="true" duration-ms="16" started-at="2019-01-25T18:25:24Z" finished-at="2019-01-25T18:25:24Z">
+    <test name="Default test" duration-ms="46746" started-at="2019-02-06T04:04:28Z" finished-at="2019-02-06T04:05:15Z">
+      <class name="com.training.functional.tests.AdminAccessToDeleteCust_021_Tests">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.functional.tests.AdminAccessToDeleteCust_021_Tests@5c7fa833]" name="setUpBeforeClass" is-config="true" duration-ms="31" started-at="2019-02-06T09:34:28Z" finished-at="2019-02-06T09:34:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.functional.tests.RTTC_021_Tests@5c7fa833]" name="setUp" duration-ms="17863" started-at="2019-01-25T18:25:24Z" finished-at="2019-01-25T18:25:42Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.functional.tests.AdminAccessToDeleteCust_021_Tests@5c7fa833]" name="setUp" duration-ms="12645" started-at="2019-02-06T09:34:28Z" finished-at="2019-02-06T09:34:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="validLoginTest()[pri:1, instance:com.training.functional.tests.RTTC_021_Tests@5c7fa833]" name="validLoginTest" duration-ms="10377" started-at="2019-01-25T18:25:42Z" finished-at="2019-01-25T18:25:52Z">
+        <test-method status="PASS" signature="validLoginTest()[pri:1, instance:com.training.functional.tests.AdminAccessToDeleteCust_021_Tests@5c7fa833]" name="validLoginTest" duration-ms="11322" started-at="2019-02-06T09:34:41Z" finished-at="2019-02-06T09:34:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginTest -->
-        <test-method status="PASS" signature="deleteCustomerDetailsFromCustomerList()[pri:2, instance:com.training.functional.tests.RTTC_021_Tests@5c7fa833]" name="deleteCustomerDetailsFromCustomerList" duration-ms="13990" started-at="2019-01-25T18:25:52Z" finished-at="2019-01-25T18:26:06Z">
+        <test-method status="PASS" signature="deleteCustomerDetailsFromCustomerList()[pri:2, instance:com.training.functional.tests.AdminAccessToDeleteCust_021_Tests@5c7fa833]" name="deleteCustomerDetailsFromCustomerList" duration-ms="19565" started-at="2019-02-06T09:34:52Z" finished-at="2019-02-06T09:35:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteCustomerDetailsFromCustomerList -->
-        <test-method status="PASS" signature="tearDown()[pri:3, instance:com.training.functional.tests.RTTC_021_Tests@5c7fa833]" name="tearDown" duration-ms="1875" started-at="2019-01-25T18:26:06Z" finished-at="2019-01-25T18:26:08Z">
+        <test-method status="PASS" signature="tearDown()[pri:3, instance:com.training.functional.tests.AdminAccessToDeleteCust_021_Tests@5c7fa833]" name="tearDown" duration-ms="3101" started-at="2019-02-06T09:35:11Z" finished-at="2019-02-06T09:35:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.functional.tests.RTTC_021_Tests -->
+      </class> <!-- com.training.functional.tests.AdminAccessToDeleteCust_021_Tests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

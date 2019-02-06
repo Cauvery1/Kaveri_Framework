@@ -12,16 +12,17 @@ import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
 import com.training.pom.RTTC_025_POM;
+import com.training.pom.DashboardForAdmin_POM;
 import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class RTTC_025_Tests {
+public class AdminToFilterReturnsFromSalesListOfReports_025_Tests {
 	private WebDriver driver;
 	private String baseUrladmin;
 	private static Properties properties;
 	private ScreenShot screenShot;
-	private RTTC_025_POM test_025_POM;
+	private DashboardForAdmin_POM dashboard_POM;
 	private LoginPOM loginPOM;
 	@BeforeClass
 	public static void setUpBeforeClass() throws IOException {
@@ -34,7 +35,7 @@ public class RTTC_025_Tests {
 	@Test(priority=0)
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
-		test_025_POM = new RTTC_025_POM(driver); 
+		dashboard_POM = new DashboardForAdmin_POM(driver);
 		loginPOM = new LoginPOM(driver);
 		baseUrladmin = properties.getProperty("baseURLadmin");
 		screenShot = new ScreenShot(driver); 
@@ -61,17 +62,17 @@ public class RTTC_025_Tests {
 	
 	@Test(priority=2)
 	public void sortReturnsFromSalesList() throws InterruptedException {
-		test_025_POM.reportsLink();
+		dashboard_POM.reportsLink();
 		screenShot.captureScreenShot("Reports Menu");
-		test_025_POM.salesLink();
+		dashboard_POM.salesLink();
 		screenShot.captureScreenShot("Sales Menu");
 		String Expected = "Returns Report";
-		String Actual = test_025_POM.returnsLink();
+		String Actual = dashboard_POM.returnsLink();
 		assertEquals(Actual,Expected);
 		screenShot.captureScreenShot("Returns Sales report page for tax ");
-		test_025_POM.groupByField();
+		dashboard_POM.groupByField();
 		screenShot.captureScreenShot("Returns Selected Weeks");
-		test_025_POM.filterBtn();
+		dashboard_POM.filterBtn();
 		screenShot.captureScreenShot("Returns  Filtered Shipping");
 		
 		
