@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
-import com.training.pom.RTTC_025_POM;
+
 import com.training.pom.DashboardForAdmin_POM;
 import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;

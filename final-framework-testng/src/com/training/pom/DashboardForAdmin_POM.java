@@ -56,6 +56,42 @@ private WebDriver driver;
 	@FindBy(xpath="//button[@id='button-filter']")
 	private WebElement filter;
 	
+	@FindBy(linkText="Customer Groups")
+	private WebElement customerGroups;
+	
+	@FindBy(xpath="//h1[contains(text(),'Customer Groups')]")
+	private WebElement customerGroupspage;
+	
+	@FindBy(xpath="//tr[1]//td[6]//a[@data-original-title='View']")
+	private WebElement viewIcon;
+	
+	@FindBy(xpath="//span[contains(text(),'Catalog')]")
+	private WebElement catalogIcon;
+	
+	@FindBy(linkText="Manufacturers")
+	private WebElement manufacturerLink;
+	
+	@FindBy(xpath="//span[contains(text(),'Catalog')]//ancestor::li//a[contains(text(),'Products')]")
+	private WebElement productsLink;
+	
+	
+	
+	@FindBy(xpath="//li[@id='menu-sale']//a[contains(text(),'Orders')]")
+	private WebElement ordersLink;
+	
+	@FindBy(xpath="//span[contains(text(),'Sales')]")
+	private WebElement salesIcon;
+	
+	public void clickManufacturersLink()  {
+        this.manufacturerLink.click();
+    	//return this.manufacturerPageTitle.getText();
+        //System.out.println(this.manufacturerPageTitle.getText());
+	}
+	
+	public void clickCatelogLink()  {
+        this.catalogIcon.click();
+    		
+	}
 	
 	public void clickCustomerIcon() throws InterruptedException {
         this.customerIcon.click();
@@ -73,6 +109,8 @@ private WebDriver driver;
 		this.sales.click();  
 		
 	}
+	
+	
 	public String ordersLink() {
 		this.order.click();  
 		return this.ordersPageTitle.getText();
@@ -101,5 +139,34 @@ private WebDriver driver;
 	}
 	public void filterBtn() {
 		this.filter.click();    
+	}
+	
+	public void clickCustomerGroupsLink() {
+        this.customerGroups.click();
+		
+	}
+	public String checkCustomerGroupspage()  {
+        return this.customerGroupspage.getText();
+		
+	}
+	
+	public void clickViewIcon()  {
+        this.viewIcon.click();
+        
+    		
+	}
+	public void clickProductsLinks()  {
+        this.productsLink.click();
+    		
+	}
+	
+	public void clickSalesIcon()  {
+        this.salesIcon.click();
+    		
+	}
+	
+	public void clickOrdersFromSalesIcon()  {
+        this.ordersLink.click();
+    		
 	}
 }
