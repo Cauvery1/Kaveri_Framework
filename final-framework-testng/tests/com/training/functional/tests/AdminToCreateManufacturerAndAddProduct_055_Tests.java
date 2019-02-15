@@ -93,7 +93,7 @@ public class AdminToCreateManufacturerAndAddProduct_055_Tests {
 		productpage_POM.clickLinksTab();
 		screenShot.captureScreenShot("Links tab is displayed");
 		productpage_POM.sendManufacturerInLinksTab("manzoor");
-		productpage_POM.clickCategoriesInLinksTab();
+		productpage_POM.clickCategoriesInLinksTab("Earrings");
 		productpage_POM.clickSaveBtnAfterAddingProduct();
 		
 		

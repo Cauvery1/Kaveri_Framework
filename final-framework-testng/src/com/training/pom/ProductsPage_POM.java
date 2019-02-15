@@ -1,5 +1,6 @@
 package com.training.pom;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -44,11 +45,21 @@ private WebDriver driver;
 	@FindBy(xpath="//input[@placeholder='Categories']")
 	private WebElement catogoriesInLinksTab;
 	
-	@FindBy(xpath="//input[@id='input-category']//parent::div//ul//li[1]//a[contains(text(),'Earrings')]")
-	private WebElement catogorySelection;
+	
+	//@FindBy(xpath="//input[@id='input-category']//parent::div//ul//li[1]//a[contains(text(),'Earrings')]")
+	//private WebElement catogorySelection;
+	
+	@FindBy(xpath="//input[@placeholder='Categories']")
+	private WebElement category;
 	
 	@FindBy(xpath="//button[@type='submit']")
 	private WebElement saveBtn;
+	
+	@FindBy(xpath="//div[@class='alert alert-success']")
+	private WebElement msgAfterSaving;
+	
+	@FindBy(xpath="//span[@class='hidden-xs hidden-sm hidden-md']")
+	private WebElement logoutBtn;
 	
 	public void clickAddNewProductBtn()  {
         this.addNewProductBtn.click();
@@ -59,8 +70,8 @@ private WebDriver driver;
 		this.productNameField.sendKeys(productname);
 	}
 	public void sendMetaTagTitle(String metatagtitle) {
-		this.productNameField.clear();
-		this.productNameField.sendKeys(metatagtitle);
+		this.metaTagTitleField.clear();
+		this.metaTagTitleField.sendKeys(metatagtitle);
 	}
 	public void clickDataTab()  {
         this.dataTab.click();
@@ -86,14 +97,38 @@ private WebDriver driver;
 		this.manufacturerInLinksTab.clear();
 		this.manufacturerInLinksTab.sendKeys(manufacturer);
 	}
-	public void clickCategoriesInLinksTab()  {
+	
+	private String beforepath ="//input[@id='input-category']//parent::div//ul//li[1]//a[contains(text(),'";
+	private String afterpath ="')]";
+	public void clickCategoriesInLinksTab(String Category)  {
+		
         this.catogoriesInLinksTab.click();
+        String actualpath=beforepath+Category+afterpath;
+		WebElement catogorySelection = driver.findElement(By.xpath(actualpath));
         Actions action = new Actions(driver);
         action.moveToElement(catogorySelection).perform();
     		
 	}
+	public void sendCategoryText(String category)  {
+		this.category.clear();
+		this.category.sendKeys(category);
+		String actualpath=beforepath+category+afterpath;
+		WebElement catogorySelection = driver.findElement(By.xpath(actualpath));
+        Actions action = new Actions(driver);
+        action.moveToElement(catogorySelection).click().perform();
+    		
+	}        
+	
 	public void clickSaveBtnAfterAddingProduct()  {
         this.saveBtn.click();
+    		
+	}
+	public String checkMessageAfterSavingProduct()  {
+        return this.msgAfterSaving.getText();
+    		
+	}
+	public void clickLogoutBtn()  {
+        this.logoutBtn.click();
     		
 	}
 }

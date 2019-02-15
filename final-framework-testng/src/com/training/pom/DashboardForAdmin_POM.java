@@ -110,7 +110,10 @@ private WebDriver driver;
 		
 	}
 	
-	
+	public void orderLink() {
+		this.order.click();  
+		//return this.ordersPageTitle.getText();
+	}
 	public String ordersLink() {
 		this.order.click();  
 		return this.ordersPageTitle.getText();
@@ -126,6 +129,9 @@ private WebDriver driver;
 		return this.shippingPageTitle.getText();
 	}
 	
+	public void returnlink() {
+		this.returns.click(); 
+	}
 	public String returnsLink() throws InterruptedException {
 		Thread.sleep(3000);
 		this.returns.click();  

@@ -14,6 +14,23 @@ private WebDriver driver;
 		PageFactory.initElements(driver, this);
 	}
 	
+	@FindBy(xpath="//input[@placeholder='Order ID']")
+	private WebElement orderID;
+	
+	//@FindBy(xpath="//select[@id='input-order-status']")
+	//private WebElement orderStatus;
+	
+	@FindBy(xpath="//input[@id='input-date-added']")
+	private WebElement dateAdded;
+	
+	@FindBy(xpath="//input[@id='input-customer']")
+	private WebElement customer;
+	
+	@FindBy(xpath="//input[@id='input-total']")
+	private WebElement total;
+	
+	@FindBy(xpath="//input[@id='input-date-modified']")
+	private WebElement dateModified;
 		
 	@FindBy(xpath="//h1[contains(text(),'Orders')]")
 	private WebElement ordersPage;
@@ -150,7 +167,8 @@ private WebDriver driver;
 	@FindBy(xpath="//div[@class='alert alert-success']")
 	private WebElement msgAfterFinalSave;
 	
-	
+	@FindBy(xpath="//button[contains(text(),'Filter')]")
+	private WebElement filterBtn;
 	
 	public String clickAddNewBtn()  {
         this.addNewBtn.click();
@@ -297,14 +315,43 @@ private WebDriver driver;
         this.invoiceBtn.click();
     		
 	}
-	public void clickOrderStatus(String status)  {
+	public void clickOrderStatus(String orderstatus)  {
         //this.orderStatus.click();
     	Select orderstatusVar = new Select(orderStatus);
-    	orderstatusVar.selectByVisibleText(status);
+    	orderstatusVar.selectByVisibleText(orderstatus);
 	}
 	public String clickAddHistoryBtn()  {
         this.addHistoryBtn.click();
         return this.addHistoryMsg.getText();
     		
 	}
-}
+	
+	public void sendOrderID(String order_id) {
+		this.orderID.clear();
+		this.orderID.sendKeys(order_id);
+	}
+	
+	public void sendCustomerValue(String customervalue) {
+		this.customer.clear();
+		this.customer.sendKeys(customervalue);
+	}
+	
+	public void sendTotalValue(String totalvalue) {
+		this.total.clear();
+		this.total.sendKeys(totalvalue);
+	}
+	
+	public void sendDateAdded(String dateadded) {
+		this.dateAdded.clear();
+		this.dateAdded.sendKeys(dateadded);
+	}
+	
+	public void sendDateModified(String datemodified) {
+		this.dateModified.clear();
+		this.dateModified.sendKeys(datemodified);
+	}
+	
+	public void clickFilterBtn() {
+		this.filterBtn.click();
+	}
+	}
